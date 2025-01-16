@@ -17,6 +17,13 @@ The following tutorials goes into the philosophy and algorithms behind automated
 
 [![Automated routing](https://img.youtube.com/vi/23VDh5naxl4/0.jpg)](https://www.youtube.com/watch?v=23VDh5naxl4) 
 
+You can follow along in this jupyter notebook
+
+## Tutorial #3: Device example 1:
+Here I reproduce a device by McDonald et. al published at http://dx.doi.org/10.1016/j.bios.2023.115223 
+The ease of design and automated routing is showcased. 
+
+[![Example device - 1](https://img.youtube.com/vi/I84Mfm7iDBs/0.jpg)](https://www.youtube.com/watch?v=I84Mfm7iDBs)
 
 
 
