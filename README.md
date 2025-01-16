@@ -13,6 +13,8 @@ Video tutorial about the basics is linked below
 with the juyter notebook to follow along.
 
 ## Tutorial #2: Deep dive into auto-routing:
+Make sure to put utilities.py in the same folder as your jupyter notebook
+
 The following tutorials goes into the philosophy and algorithms behind automated routing. Given an input device, the shape and location of both electrode and pads, the RoutingLayout class will try to automatically route pads and electrodes via creating an implicit graph in the device and use maximal flow algorithms on the graph to compute node-disjoint paths (non-intersecting paths between electrodes and pads, which is a key requirement when routing electronics as metal interconnects are on the same metal layer and cannot intersect). If you are interested in how to use the routing framework, skip this video as here I derive the principles and functions to achieve automated routing.
 
 [![Automated routing](https://img.youtube.com/vi/23VDh5naxl4/0.jpg)](https://www.youtube.com/watch?v=23VDh5naxl4) 
@@ -20,10 +22,38 @@ The following tutorials goes into the philosophy and algorithms behind automated
 You can follow along in this jupyter notebook
 
 ## Tutorial #3: Device example 1:
-Here I reproduce a device by McDonald et. al published at http://dx.doi.org/10.1016/j.bios.2023.115223 
+Make sure to put utilities.py in the same folder as your jupyter notebook
+Here I reproduce a device by McDonald et. al. published at http://dx.doi.org/10.1016/j.bios.2023.115223 
+
 The ease of design and automated routing is showcased. 
 
 [![Example device - 1](https://img.youtube.com/vi/I84Mfm7iDBs/0.jpg)](https://www.youtube.com/watch?v=I84Mfm7iDBs)
+
+The corresponding jupyter notebook is found here
+
+## Tutorial #4: Device example 2:
+Make sure to put utilities.py in the same folder as your jupyter notebook
+Here I reproduce a device by Park et. al. published at https://www.science.org/doi/10.1126/sciadv.abf9153 
+
+Specifically, I show how to create the serpentine structure shown in Figure S19 and embed it in the entire device. The routing is performed in a similar fashion to that shown in the publication.
+
+[![Example device - 2](https://img.youtube.com/vi/OHwyicW2AnE/0.jpg)](https://www.youtube.com/watch?v=OHwyicW2AnE)
+
+The corresponding notebook is found here.
+
+## Tutorial #5: Spiral device creation, simulation and optimization:
+Make sure to put utilities.py and fenics_simulation.py in the same folder as your jupyter notebook
+
+Here, I reproduce in broad strokes the spiral device publish by myself and co-author X. Yang at https://www.nature.com/articles/s41587-023-02081-3 
+
+The relevant part of the device is created. Then, it is converted to a mesh for finite-element simulation with FEniCS, a finite-element solver package written in Python. I show how to prepare the mesh to easily import it into FEniCS, and how to mark the relevant parts of the device during the mesh creation so that they can be used automatically to set boundary condition (e.g no slip/rotation at the device edge). Finally, I show how to simulate the device deformation under its own weight (or with the addition of an organoid), and how to process and visualize the simulation results. I show how to interpret the results from a physical stand point in order to guide the further optimization of the device.
+
+[![Device simulation and optimization](https://img.youtube.com/vi/UfntaHuc6hc/0.jpg)](https://www.youtube.com/watch?v=UfntaHuc6hc)
+
+The tutorial notebook is found here.
+
+
+
 
 
 
