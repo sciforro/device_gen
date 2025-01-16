@@ -20,7 +20,7 @@ The following tutorials goes into the philosophy and algorithms behind automated
 
 [![Automated routing](https://img.youtube.com/vi/23VDh5naxl4/0.jpg)](https://www.youtube.com/watch?v=23VDh5naxl4) 
 
-You can follow along in this jupyter notebook
+You can follow along in this [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/2_Video_tutorial_on_routing.ipynb)
 
 ## Tutorial #3: Device example 1:
 Make sure to put utilities.py in the same folder as your jupyter notebook
@@ -30,7 +30,7 @@ The ease of design and automated routing is showcased.
 
 [![Example device - 1](https://img.youtube.com/vi/I84Mfm7iDBs/0.jpg)](https://www.youtube.com/watch?v=I84Mfm7iDBs)
 
-The corresponding jupyter notebook is found here
+The corresponding [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/3_Video_tutorial_device_McDonald.ipynb) is found here
 
 ## Tutorial #4: Device example 2:
 Make sure to put utilities.py in the same folder as your jupyter notebook
