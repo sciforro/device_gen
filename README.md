@@ -10,7 +10,8 @@ Video tutorial about the basics is linked below
 
 [![Phidl and Shapely basics](https://img.youtube.com/vi/8cDB7dCHEBI/0.jpg)](https://www.youtube.com/watch?v=8cDB7dCHEBI) 
 
-with the juyter notebook to follow along.
+with the [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/1_Video_tutorial_basics.ipynb)
+ to follow along.
 
 ## Tutorial #2: Deep dive into auto-routing:
 Make sure to put utilities.py in the same folder as your jupyter notebook
