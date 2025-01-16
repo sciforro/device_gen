@@ -23,7 +23,7 @@ The following tutorials goes into the philosophy and algorithms behind automated
 You can follow along in this [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/2_Video_tutorial_on_routing.ipynb)
 
 ## Tutorial #3: Device example 1:
-Make sure to put utilities.py in the same folder as your jupyter notebook
+Make sure to put utilities.py (in the notebooks_and_code folder) in the same folder as your jupyter notebook
 Here I reproduce a device by McDonald et. al. published at http://dx.doi.org/10.1016/j.bios.2023.115223 
 
 The ease of design and automated routing is showcased. 
@@ -40,10 +40,10 @@ Specifically, I show how to create the serpentine structure shown in Figure S19 
 
 [![Example device - 2](https://img.youtube.com/vi/OHwyicW2AnE/0.jpg)](https://www.youtube.com/watch?v=OHwyicW2AnE)
 
-The corresponding notebook is found here.
+The corresponding [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/4_Video_Tutorial_device_Park.ipynb)  is found here.
 
 ## Tutorial #5: Spiral device creation, simulation and optimization:
-Make sure to put utilities.py and fenics_simulation.py in the same folder as your jupyter notebook
+Make sure to put utilities.py and fenics_simulation.py  (in the notebooks_and_code folder) in the same folder as your jupyter notebook
 
 Here, I reproduce in broad strokes the spiral device publish by myself and co-author X. Yang at https://www.nature.com/articles/s41587-023-02081-3 
 
@@ -51,7 +51,7 @@ The relevant part of the device is created. Then, it is converted to a mesh for 
 
 [![Device simulation and optimization](https://img.youtube.com/vi/UfntaHuc6hc/0.jpg)](https://www.youtube.com/watch?v=UfntaHuc6hc)
 
-The tutorial notebook is found here.
+The tutorial [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/5_Video_tutorial_Kirigami_full.ipynb)  is found here.
 
 
 
