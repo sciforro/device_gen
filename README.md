@@ -8,6 +8,15 @@ Two Python packages that synergize very well for creating device layouts are
 
 Video tutorial about the basics is linked below
 
-[![Video Title](https://img.youtube.com/vi/8cDB7dCHEBI/0.jpg)](https://www.youtube.com/watch?v=8cDB7dCHEBI) 
+[![Phidl and Shapely basics](https://img.youtube.com/vi/8cDB7dCHEBI/0.jpg)](https://www.youtube.com/watch?v=8cDB7dCHEBI) 
 
 with the juyter notebook to follow along.
+
+## Tutorial #2: Deep dive into auto-routing:
+The following tutorials goes into the philosophy and algorithms behind automated routing. Given an input device, the shape and location of both electrode and pads, the RoutingLayout class will try to automatically route pads and electrodes via creating an implicit graph in the device and use maximal flow algorithms on the graph to compute node-disjoint paths (non-intersecting paths between electrodes and pads, which is a key requirement when routing electronics as metal interconnects are on the same metal layer and cannot intersect). If you are interested in how to use the routing framework, skip this video as here I derive the principles and functions to achieve automated routing.
+
+[![Automated routing](https://img.youtube.com/vi/23VDh5naxl4/0.jpg)](https://www.youtube.com/watch?v=23VDh5naxl4) 
+
+
+
+
