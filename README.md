@@ -41,7 +41,7 @@ Specifically, I show how to create the serpentine structure shown in Figure S19 
 
 [![Example device - 2](https://img.youtube.com/vi/OHwyicW2AnE/0.jpg)](https://www.youtube.com/watch?v=OHwyicW2AnE)
 
-The corresponding [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/4_Video_Tutorial_device_Park.ipynb)  is found here.
+The corresponding [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/4_Video_Tutorial_device_Park.ipynb)  is found here and the final device will look like this: <img align="center" height="450" src="https://github.com/sciforro/device_gen/blob/main/images/dev2.png">
 
 ## Tutorial #5: Spiral device creation, simulation and optimization:
 Make sure to put utilities.py and fenics_simulation.py  (in the notebooks_and_code folder) in the same folder as your jupyter notebook
