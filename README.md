@@ -31,6 +31,8 @@ The ease of design and automated routing is showcased.
 [![Example device - 1](https://img.youtube.com/vi/I84Mfm7iDBs/0.jpg)](https://www.youtube.com/watch?v=I84Mfm7iDBs)
 
 The corresponding [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/3_Video_tutorial_device_McDonald.ipynb) is found here
+<h3><img align="center" height="30" src="https://github.com/sciforro/device_gen/blob/main/images/dev1.png"> TECHNOLOGIES</h3>
+
 
 ## Tutorial #4: Device example 2:
 Make sure to put utilities.py in the same folder as your jupyter notebook
