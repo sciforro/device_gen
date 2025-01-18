@@ -30,7 +30,7 @@ The ease of design and automated routing is showcased.
 
 [![Example device - 1](https://img.youtube.com/vi/I84Mfm7iDBs/0.jpg)](https://www.youtube.com/watch?v=I84Mfm7iDBs)
 
-The corresponding [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/3_Video_tutorial_device_McDonald.ipynb) is found here, and the final device here <h3><img align="center" height="450" src="https://github.com/sciforro/device_gen/blob/main/images/dev1.png"></h3>
+The corresponding [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/3_Video_tutorial_device_McDonald.ipynb) is found here. The final device will look like this: <img align="center" height="450" src="https://github.com/sciforro/device_gen/blob/main/images/dev1.png">
 
 
 ## Tutorial #4: Device example 2:
