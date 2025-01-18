@@ -52,8 +52,8 @@ The relevant part of the device is created. Then, it is converted to a mesh for 
 
 [![Device simulation and optimization](https://img.youtube.com/vi/UfntaHuc6hc/0.jpg)](https://www.youtube.com/watch?v=UfntaHuc6hc)
 
-The tutorial [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/5_Video_tutorial_Kirigami_full.ipynb)  is found here. The strain fields overlaid on the deformation are visualized with Blender, using the strain_mapper.blend file in the notebook_and_code folder, and can be explored interactively: <img align="center" height="450" src="https://github.com/sciforro/device_gen/blob/main/images/defo1.png">
-<img align="center" height="450" src="https://github.com/sciforro/device_gen/blob/main/images/defo2.png">
+The tutorial [jupyter notebook](https://github.com/sciforro/device_gen/blob/main/notebooks_and_code/5_Video_tutorial_Kirigami_full.ipynb)  is found here. The strain fields overlaid on the deformation are visualized with Blender, using the strain_mapper.blend file in the notebook_and_code folder, and can be explored interactively: <img align="center" height="120" src="https://github.com/sciforro/device_gen/blob/main/images/defo1.png">
+<img align="center" height="120" src="https://github.com/sciforro/device_gen/blob/main/images/defo2.png">
 
 
 
