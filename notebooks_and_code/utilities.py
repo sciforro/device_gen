@@ -75,7 +75,7 @@ def smooth_route(route,resample=5,num_final_coords=1000):
     return shapely.LineString(curve_points)
 
 class RoutingLayout():#todo: make the loops with normals by using the distance function to check closest border to split lines equally max(linesgap, distance/n_lines)
-    def __init__(self,device,border_tolerance,skeleton_fuse_dist=20,override_auto_skel_dist=False,skel_interp_dist=1):
+    def __init__(self,device,border_tolerance,skeleton_fuse_dist=20,override_auto_skel_dist=False,skel_interp_dist=1,remove_dust_thresh=1e-1):
         assert type(device)==shapely.geometry.polygon.Polygon
         self.device=device
         self.shaved_device=device.buffer(-border_tolerance)
@@ -84,10 +84,14 @@ class RoutingLayout():#todo: make the loops with normals by using the distance f
 
         #create skeleton of the polygon (midlines)
         size=np.median(np.sqrt(np.sum(np.diff(np.asarray(self.shaved_device.envelope.boundary.coords),axis=0)**2,axis=1)))
-        cline=Centerline(self.shaved_device,interpolation_distance=size/500)
+        interp_dist = size/500
+        if override_auto_skel_dist:
+            interp_dist=skel_interp_dist
+        cline=Centerline(self.shaved_device,interpolation_distance=interp_dist)
         cline=shapely.ops.linemerge(cline.geometry)
         self.skeleton=shapely.ops.linemerge(self.remove_dangling_lines(cline))
         self.skeleton=shapely.ops.linemerge(self.fuse_short_skeleton_segment(distance=skeleton_fuse_dist)) #sometimes two very close waypoints are created, which are topologically not necessary. This function snaps them and interpolates the incoming skeletons together
+        self.skeleton=shapely.ops.linemerge([el for el in self.skeleton.geoms if el.length>remove_dust_thresh])
         self.electrodes_xy=[]
         self.pads_xy=[]
     def remove_dangling_lines(self,obj):
@@ -158,7 +162,7 @@ class RoutingLayout():#todo: make the loops with normals by using the distance f
         self.all_route_lines=shapely.ops.linemerge(diff_ab.union(diff_ba)) #collect all lines in a multistring
         t4=time.time()
         print(t2-t1,t3-t2,t4-t3)
-    def lay_down_lines(self,n_lines,gap_um,adaptive=False):
+    def lay_down_lines(self,n_lines,gap_um,adaptive=False,add_border=True):
         def arclength_line_and_normal(linestring,resolution=5):
             '''resolution in microns, float'''
             arclength = np.linspace(0,1, int(linestring.length/resolution))
@@ -242,9 +246,10 @@ class RoutingLayout():#todo: make the loops with normals by using the distance f
             
         all_lines.append(self.simp_skel)
         self.possible_routes=shapely.unary_union(all_lines) #dont prune to make longer waypoint cross-curves
-        self.make_grids_at_waypoints()
+        self.make_grids_at_waypoints(waypoint_size=1)
         all_lines=shapely.unary_union(all_lines).intersection(self.shaved_device.buffer(-gap_um*.9)) #clean up edges              
-        all_lines=shapely.unary_union(all_lines.union(self.shaved_device.boundary))
+        if add_border:
+        	all_lines=shapely.unary_union(all_lines.union(self.shaved_device.boundary))
         all_lines=shapely.unary_union(all_lines.union(shapely.unary_union(self.lines_to_add_for_crisscross)))
         self.all_route_lines=shapely.line_merge(all_lines)
     def add_electrodes(self,list_of_boundaries,list_of_points_to_connect_center=[],clearance=5,type='electrode'):
@@ -359,7 +364,7 @@ class RoutingLayout():#todo: make the loops with normals by using the distance f
         else:
             coords=np.asarray(obj.coords)
         return coords
-    def make_grids_at_waypoints(self,rotation_angle=180):
+    def make_grids_at_waypoints(self,waypoint_size=1,rotation_angle=180):
         #All biffurcations in the skeleton indicate points at which routes need to jump to different lines.
         #to do that, we need to provide a local grid. This is done by cutting out all the lines around
         #a biffurcation point, and rotating them in place and adding them to the design. This creates
@@ -374,7 +379,7 @@ class RoutingLayout():#todo: make the loops with normals by using the distance f
     
         self.lines_to_add_for_crisscross = []
         for wp in self.waypoints.geoms:
-            number_of_branches=np.sum([el.intersects(wp) for el in self.skeleton.geoms])
+            number_of_branches=np.sum([el.intersects(wp.buffer(waypoint_size)) for el in self.skeleton.geoms])
             rotation_angle=180/number_of_branches
             x,y=np.asarray(wp.coords).T
             radius_to_border = wp.distance(self.borders)*1.05
